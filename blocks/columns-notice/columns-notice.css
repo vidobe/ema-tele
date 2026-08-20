@@ -34,27 +34,3 @@
 .columns-notice > div:first-child strong {
   font-weight: 700;
 }
-
-/* jump-link row (the .notice-jump element is itself a <p>) */
-.columns-notice p.notice-jump {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 24px;
-  font-size: 18px;
-}
-
-.columns-notice .notice-jump a {
-  display: inline-block;
-  padding: 10px 12px;
-  border: 1px solid var(--notice-border);
-  border-radius: 12px;
-  font-weight: 500;
-  text-decoration: none;
-  color: var(--notice-text);
-}
-
-.columns-notice .notice-jump a:hover {
-  background-color: var(--notice-bg);
-}
