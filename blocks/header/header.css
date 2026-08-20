@@ -37,6 +37,12 @@ header nav[aria-expanded='true'] {
 }
 
 @media (width >= 900px) {
+  /* two-tier header is taller than the default 64px; let it size to content
+     so the page content below isn't overlapped */
+  header {
+    height: auto;
+  }
+
   header .nav-wrapper {
     position: relative;
   }
@@ -65,13 +71,20 @@ header nav[aria-expanded='true'] {
   /* utility bar — base element rules first (lowest specificity) */
   header nav .nav-utility {
     grid-area: utility;
-    display: flex;
+    display: block;
     visibility: visible;
-    justify-content: space-between;
-    align-items: center;
     padding: 6px 0;
     border-bottom: 1px solid rgb(20 19 18 / 8%);
     font-size: 14px;
+  }
+
+  /* the two <ul> groups (segments | account+language) sit on ONE line:
+     left group pushed left, right group pushed right */
+  header nav .nav-utility .default-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
   }
 
   header nav .nav-utility ul {
@@ -382,7 +395,8 @@ header nav .nav-tools a {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 20px;
+  min-width: 220px;
+  padding: 10px 20px;
   border-radius: 24px;
   background-color: rgb(20 19 18 / 8%);
   color: #999391;
