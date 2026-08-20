@@ -1,0 +1,112 @@
+/* accordion: collapsible rows with chevron. Variants: yellow-panel, dark, plain (default) */
+.accordion {
+  --accordion-text: #141312;
+  --accordion-divider: rgb(20 19 18 / 8%);
+}
+
+.accordion .accordion-item {
+  border-bottom: 1px solid var(--accordion-divider);
+}
+
+.accordion .accordion-item details {
+  padding: 24px 0;
+}
+
+.accordion .accordion-item-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  list-style: none;
+  cursor: pointer;
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  color: var(--accordion-text);
+}
+
+.accordion .accordion-item-summary::-webkit-details-marker {
+  display: none;
+}
+
+/* chevron */
+.accordion .accordion-item-summary::after {
+  content: "";
+  flex: 0 0 auto;
+  width: 14px;
+  height: 14px;
+  border-right: 2px solid currentcolor;
+  border-bottom: 2px solid currentcolor;
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+.accordion .accordion-item details[open] .accordion-item-summary::after {
+  transform: rotate(-135deg);
+}
+
+.accordion .accordion-item-body {
+  padding-top: 16px;
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--accordion-text);
+}
+
+.accordion .accordion-item-body p {
+  margin: 0 0 12px;
+}
+
+/* ---- variant: yellow-panel (Da's zo geregeld) ---- */
+.accordion.yellow-panel {
+  background-color: #ffc421;
+  border-radius: 24px;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.accordion.yellow-panel .accordion-intro img {
+  width: auto;
+  max-height: 48px;
+  margin-bottom: 24px;
+}
+
+.accordion.yellow-panel .accordion-intro h2,
+.accordion.yellow-panel .accordion-intro h3 {
+  font-size: var(--heading-font-size-xxl);
+  line-height: 1;
+  font-weight: 400;
+  margin: 0;
+  color: var(--accordion-text);
+}
+
+/* ---- variant: dark (Voorwaarden en disclaimers) ---- */
+.accordion.dark {
+  --accordion-text: #fff;
+  --accordion-divider: rgb(255 255 255 / 8%);
+
+  background-color: #1a1a1a;
+  padding: 24px 32px;
+}
+
+@media (width >= 900px) {
+  .accordion.yellow-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 48px;
+    align-items: start;
+  }
+
+  /* intro sits in the left column (row 1); items auto-flow down the right column */
+  .accordion.yellow-panel .accordion-intro {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: start;
+  }
+
+  .accordion.yellow-panel .accordion-item {
+    grid-column: 2;
+  }
+}

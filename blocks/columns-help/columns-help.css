@@ -1,0 +1,49 @@
+/* columns-help: "Hulp nodig?" — centered heading + subtext + 2 icon/link columns */
+.columns-help {
+  --help-text: #141312;
+
+  text-align: center;
+}
+
+.columns-help h2 {
+  font-size: var(--heading-font-size-l);
+  font-weight: 700;
+  margin: 0 0 24px;
+  color: var(--help-text);
+}
+
+.columns-help > div:first-child p,
+.columns-help > div:nth-child(2) p {
+  font-size: 18px;
+  line-height: 28px;
+  margin: 0 auto 24px;
+  max-width: 566px;
+  color: var(--help-text);
+}
+
+/* the links row */
+.columns-help .columns-help-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.columns-help .columns-help-links > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.columns-help .columns-help-links img {
+  width: 48px;
+  height: 48px;
+}
+
+.columns-help .columns-help-links a {
+  font-size: 18px;
+  color: var(--help-text);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}

@@ -1,0 +1,60 @@
+/* columns-notice: light-blue student discount info banner + jump links */
+.columns-notice {
+  --notice-bg: rgb(225 235 255 / 64%);
+  --notice-border: #aadcff;
+  --notice-radius: 12px;
+  --notice-text: #141312;
+}
+
+.columns-notice > div {
+  display: block;
+}
+
+/* the info box (first row) */
+.columns-notice > div:first-child {
+  background-color: var(--notice-bg);
+  border: 1px solid var(--notice-border);
+  border-radius: var(--notice-radius);
+  padding: 24px 64px 24px 24px;
+  position: relative;
+}
+
+.columns-notice > div:first-child p {
+  margin: 0 0 4px;
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--notice-text);
+}
+
+.columns-notice > div:first-child p:first-child {
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.columns-notice > div:first-child strong {
+  font-weight: 700;
+}
+
+/* jump-link row (the .notice-jump element is itself a <p>) */
+.columns-notice p.notice-jump {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+  font-size: 18px;
+}
+
+.columns-notice .notice-jump a {
+  display: inline-block;
+  padding: 10px 12px;
+  border: 1px solid var(--notice-border);
+  border-radius: 12px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--notice-text);
+}
+
+.columns-notice .notice-jump a:hover {
+  background-color: var(--notice-bg);
+}

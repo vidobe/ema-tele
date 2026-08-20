@@ -1,0 +1,70 @@
+/* columns-features: "Gewoon het beste voor studenten" — image + 3 feature rows */
+.columns-features {
+  --features-text: #141312;
+}
+
+.columns-features > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.columns-features-media {
+  line-height: 0;
+}
+
+.columns-features-media picture,
+.columns-features-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
+
+.columns-features-list h2 {
+  font-size: var(--heading-font-size-xxl);
+  line-height: 1;
+  font-weight: 400;
+  margin: 0 0 16px;
+  color: var(--features-text);
+}
+
+/* each feature: an h3 title + a paragraph, with an icon before the title */
+.columns-features-list h3 {
+  font-size: 32px;
+  line-height: 32px;
+  font-weight: 700;
+  margin: 24px 0 4px;
+  color: var(--features-text);
+}
+
+.columns-features-list h3 img {
+  width: 48px;
+  height: 48px;
+  vertical-align: middle;
+  margin-right: 16px;
+}
+
+.columns-features-list p {
+  font-size: 18px;
+  line-height: 28px;
+  margin: 0 0 4px;
+  padding-left: 64px;
+  color: var(--features-text);
+}
+
+@media (width >= 900px) {
+  .columns-features > div {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .columns-features-media {
+    flex: 0 0 33%;
+  }
+
+  .columns-features-list {
+    flex: 1;
+  }
+}

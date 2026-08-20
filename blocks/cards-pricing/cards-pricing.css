@@ -1,0 +1,143 @@
+/* cards-pricing: Telenet student pricing cards (Alleen internet / Internet en mobiel) */
+.cards-pricing {
+  --pricing-card-bg: #fff;
+  --pricing-text: #141312;
+  --pricing-cta-bg: #000;
+  --pricing-cta-text: #fff;
+  --pricing-streaming: #dc353f;
+  --pricing-divider: rgb(20 19 18 / 8%);
+  --pricing-radius: 24px;
+  --pricing-badge-bg: #ffc421;
+}
+
+/* section heading rendered as an h2/h3 above the block */
+.cards-pricing > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.cards-pricing > ul > li {
+  position: relative;
+  background-color: var(--pricing-card-bg);
+  border-radius: var(--pricing-radius);
+  box-shadow: 0 4px 8px 0 rgb(20 19 18 / 4%);
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.cards-pricing-body > * {
+  margin: 0 0 12px;
+  color: var(--pricing-text);
+}
+
+/* tier name (first heading) */
+.cards-pricing-body h3 {
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+
+/* speed (strong / h4) */
+.cards-pricing-body h4 {
+  font-size: 32px;
+  line-height: 1;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.cards-pricing-body p {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+/* small strikethrough price note */
+.cards-pricing-body .pricing-strike {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+/* CTA button */
+.cards-pricing-body .button-container,
+.cards-pricing-body p.button-container {
+  margin: 16px 0;
+}
+
+.cards-pricing-body a.button,
+.cards-pricing-body a {
+  display: block;
+  text-align: center;
+  background-color: var(--pricing-cta-bg);
+  color: var(--pricing-cta-text);
+  text-decoration: none;
+  padding: 10px 24px;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+/* streaming link (red text link) */
+.cards-pricing-body .pricing-streaming {
+  color: var(--pricing-streaming);
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.cards-pricing-body .pricing-streaming a {
+  display: inline;
+  background: none;
+  color: var(--pricing-streaming);
+  padding: 0;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+/* the actual price line, e.g. "€ 25,00 per maand" */
+.cards-pricing-body .pricing-amount {
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1;
+}
+
+.cards-pricing-body .pricing-amount .pricing-period {
+  font-family: var(--body-font-family);
+  font-weight: 400;
+  font-size: 14px;
+}
+
+/* divider between blocks of content */
+.cards-pricing-body hr {
+  border: none;
+  border-top: 1px solid var(--pricing-divider);
+  margin: 16px 0;
+}
+
+/* "Meest gekozen" badge */
+.cards-pricing-featured .cards-pricing-body > p:first-child {
+  position: absolute;
+  top: -14px;
+  left: 24px;
+  margin: 0;
+  background-color: var(--pricing-badge-bg);
+  color: var(--pricing-text);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 4px 12px;
+  border-radius: 8px;
+}
+
+.cards-pricing-featured .cards-pricing-body > p:first-child em {
+  font-style: normal;
+}
+
+@media (width >= 900px) {
+  .cards-pricing > ul {
+    grid-template-columns: 1fr 1fr;
+  }
+}

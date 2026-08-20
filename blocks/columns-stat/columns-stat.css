@@ -1,0 +1,49 @@
+/* columns-stat: "Meer dan 17.000 studenten..." large text + image */
+.columns-stat {
+  --stat-text: #141312;
+}
+
+.columns-stat > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+
+.columns-stat-text h2,
+.columns-stat-text p {
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: 400;
+  margin: 0;
+  color: var(--stat-text);
+}
+
+.columns-stat-text strong {
+  font-weight: 700;
+}
+
+.columns-stat-media {
+  line-height: 0;
+}
+
+.columns-stat-media picture,
+.columns-stat-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (width >= 900px) {
+  .columns-stat > div {
+    flex-direction: row;
+  }
+
+  .columns-stat-text {
+    flex: 1 1 60%;
+  }
+
+  .columns-stat-media {
+    flex: 0 0 30%;
+  }
+}

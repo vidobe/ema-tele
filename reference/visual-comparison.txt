@@ -1,0 +1,44 @@
+Figma Page Migration — Visual Comparison
+Page: index (Student 2026 campaign LP)
+Figma: https://www.figma.com/design/IJ4hMnSE2g4ORFVNy7loI8/Telenet-figma-design?node-id=3-6
+Viewport: 1920px (Figma frame width)
+
+Stage B (lazy-load): 0 broken images (10 decorated <img> + CSS backgrounds)
+
+Stage C (full-bleed geometry) — HARD GATE:
+  .hero-campaign                       container 1920x337  image 1920x337  delta 0x0  PASS
+  .columns-streaming banner            container 1200x125  image 1200x125  delta 0x0  PASS
+  .cards-promo li[0] background        588x560  bg present  PASS
+  .cards-promo li[1] background        588x560  bg present  PASS
+
+Section render order & heights (13 sections, all present, correct order):
+  1  hero-campaign      337
+  2  columns-notice     240
+  3  cards-pricing      519   (Alleen internet)
+  4  columns-inbegrepen 116
+  5  cards-pricing      559   (Internet en mobiel)
+  6  columns-streaming  273
+  7  columns-features   527
+  8  columns-stat       317
+  9  accordion(yellow)  688   (was 3592 before grid fix)
+  10 cards-promo        614
+  11 accordion(faq)     774
+  12 columns-help       247
+  13 accordion(dark)    138
+
+Fixes applied during sweep:
+  - accordion.yellow-panel: replaced `grid-row: 1 / span 99` (which generated 99
+    empty grid tracks, inflating the panel to 3592px) with a 2-column grid +
+    auto-flow. Panel now 688px, matching the design. Re-ran Stages B/C/E after fix.
+
+Typography: FALLBACK IN USE. Design uses proprietary Telenet faces
+  (pp-right-telenet, telenet-albra-sans) not present in repo; mapped to project
+  Roboto / Roboto Condensed. Letterforms differ from design; layout preserved.
+
+Notes:
+  - Header/footer 404s in console are the pre-existing nav.plain.html/footer.plain.html
+    proxy stubs, unrelated to this page.
+  - Accordion bodies are collapsed in the design (no body copy authored); items
+    toggle open via <details> with no body content, matching the source.
+  - Hero headline text is baked into the Figma banner artwork (single flattened
+    image), so it renders as an image rather than live text — matches source export.

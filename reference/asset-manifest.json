@@ -1,0 +1,16 @@
+{
+  "pageName": "index",
+  "imageDirectory": "content/images/index",
+  "summary": { "totalDiscovered": 8, "totalDownloaded": 8, "totalFailed": 0 },
+  "note": "Figma exports all as PNG regardless of source extension; filenames normalized to .png.",
+  "assets": [
+    { "blockOrder": 1, "blockVariant": "hero-campaign", "filename": "hero-campaign.png", "localPath": "./images/index/hero-campaign.png", "usage": "content-image", "status": "downloaded", "dims": "3840x674" },
+    { "blockOrder": 5, "blockVariant": "columns-streaming", "filename": "streaming-banner.png", "localPath": "./images/index/streaming-banner.png", "usage": "content-image", "status": "downloaded", "dims": "2264x235" },
+    { "blockOrder": 7, "blockVariant": "columns-stat", "filename": "stat-student-desk.png", "localPath": "./images/index/stat-student-desk.png", "usage": "content-image", "status": "downloaded", "dims": "693x610" },
+    { "blockOrder": 8, "blockVariant": "accordion", "filename": "telenet-logo.png", "localPath": "./images/index/telenet-logo.png", "usage": "content-image", "status": "downloaded", "dims": "192x192" },
+    { "blockOrder": 9, "blockVariant": "cards-promo", "filename": "promo-toptoestellen-bg.png", "localPath": "./images/index/promo-toptoestellen-bg.png", "usage": "background-image", "status": "downloaded", "dims": "1108x1224" },
+    { "blockOrder": 9, "blockVariant": "cards-promo", "filename": "promo-datasim-bg.png", "localPath": "./images/index/promo-datasim-bg.png", "usage": "background-image", "status": "downloaded", "dims": "1108x1224" },
+    { "blockOrder": 11, "blockVariant": "columns-help", "filename": "help-advisor.png", "localPath": "./images/index/help-advisor.png", "usage": "content-image", "status": "downloaded", "dims": "96x96" },
+    { "blockOrder": 11, "blockVariant": "columns-help", "filename": "help-message.png", "localPath": "./images/index/help-message.png", "usage": "content-image", "status": "downloaded", "dims": "96x96" }
+  ]
+}

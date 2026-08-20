@@ -1,0 +1,150 @@
+{
+  "pageName": "index",
+  "fileKey": "IJ4hMnSE2g4ORFVNy7loI8",
+  "pageNodeId": "3:6",
+  "designName": "Student 2026 campaign LP",
+  "frameWidth": 1920,
+  "frameHeight": 6737,
+  "notes": "Header (wink-global-header 3:804) and Footer (3:663) map to existing nav/footer docs and are excluded from index.plain.html body. Accordion sections use a NEW 'accordion' block. Responsive: desktop-first with basic responsive fallbacks.",
+  "totalBlocks": 12,
+  "blocks": [
+    {
+      "order": 1,
+      "nodeId": "3:638",
+      "figmaName": "Hero (Mask Group + banner)",
+      "suggestedBlockType": "hero",
+      "suggestedVariantName": "hero-campaign",
+      "y": 64,
+      "height": 337,
+      "status": "pending",
+      "hasImages": true
+    },
+    {
+      "order": 2,
+      "nodeId": "3:61",
+      "figmaName": "Info notification banner",
+      "suggestedBlockType": "columns",
+      "suggestedVariantName": "columns-notice",
+      "y": 401,
+      "height": 332,
+      "status": "pending",
+      "hasImages": false
+    },
+    {
+      "order": 3,
+      "nodeId": "3:98",
+      "figmaName": "Alleen internet - pricing cards + jump links",
+      "suggestedBlockType": "cards",
+      "suggestedVariantName": "cards-pricing",
+      "y": 733,
+      "height": 659,
+      "rowCount": 2,
+      "status": "pending",
+      "hasImages": false
+    },
+    {
+      "order": 4,
+      "nodeId": "3:255",
+      "figmaName": "Internet en mobiel - pricing cards",
+      "suggestedBlockType": "cards",
+      "suggestedVariantName": "cards-pricing",
+      "y": 1548,
+      "height": 695,
+      "rowCount": 2,
+      "status": "pending",
+      "hasImages": false
+    },
+    {
+      "order": 5,
+      "nodeId": "3:409",
+      "figmaName": "Streaming cadeau dark banner",
+      "suggestedBlockType": "columns",
+      "suggestedVariantName": "columns-streaming",
+      "y": 2243,
+      "height": 353,
+      "status": "pending",
+      "hasImages": true
+    },
+    {
+      "order": 6,
+      "nodeId": "3:444",
+      "figmaName": "Gewoon het beste voor studenten (image + feature list)",
+      "suggestedBlockType": "columns",
+      "suggestedVariantName": "columns-features",
+      "y": 3293,
+      "height": 304,
+      "status": "pending",
+      "hasImages": true
+    },
+    {
+      "order": 7,
+      "nodeId": "3:451",
+      "figmaName": "Meer dan 17.000 studenten (text + image)",
+      "suggestedBlockType": "columns",
+      "suggestedVariantName": "columns-stat",
+      "y": 3654,
+      "height": 380,
+      "status": "pending",
+      "hasImages": true
+    },
+    {
+      "order": 8,
+      "nodeId": "3:490",
+      "figmaName": "Telenet met studentenkorting - Da's zo geregeld (accordion)",
+      "suggestedBlockType": "accordion",
+      "suggestedVariantName": "accordion",
+      "y": 4098,
+      "height": 732,
+      "status": "pending",
+      "hasImages": false,
+      "newBlock": true
+    },
+    {
+      "order": 9,
+      "nodeId": "3:552",
+      "figmaName": "Meer voor je studentenbudget (2 promo cards)",
+      "suggestedBlockType": "cards",
+      "suggestedVariantName": "cards-promo",
+      "y": 4886,
+      "height": 656,
+      "rowCount": 2,
+      "status": "pending",
+      "hasImages": true
+    },
+    {
+      "order": 10,
+      "nodeId": "3:612",
+      "figmaName": "Veelgestelde vragen (FAQ accordion)",
+      "suggestedBlockType": "accordion",
+      "suggestedVariantName": "accordion",
+      "y": 5638,
+      "height": 216,
+      "status": "pending",
+      "hasImages": false,
+      "newBlock": true
+    },
+    {
+      "order": 11,
+      "nodeId": "3:53",
+      "figmaName": "Hulp nodig? (contact links)",
+      "suggestedBlockType": "columns",
+      "suggestedVariantName": "columns-help",
+      "y": 5854,
+      "height": 100,
+      "status": "pending",
+      "hasImages": false
+    },
+    {
+      "order": 12,
+      "nodeId": "3:53b",
+      "figmaName": "Voorwaarden en disclaimers (accordion)",
+      "suggestedBlockType": "accordion",
+      "suggestedVariantName": "accordion",
+      "y": 5910,
+      "height": 159,
+      "status": "pending",
+      "hasImages": false,
+      "newBlock": true
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+/* hero-campaign: full-width banner image (headline baked into the artwork) */
+.hero-campaign-container .hero-campaign-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.hero-campaign {
+  position: relative;
+  padding: 0;
+  background-color: var(--hero-campaign-bg, #ffe615);
+}
+
+.hero-campaign picture,
+.hero-campaign img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* If authored with no image, fall back to a padded text banner */
+.hero-campaign.no-image {
+  padding: 40px 24px;
+}
+
+.hero-campaign.no-image * {
+  color: var(--text-color);
+}

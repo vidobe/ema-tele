@@ -1,0 +1,72 @@
+/* columns-streaming: "Altijd inbegrepen" checklist + dark streaming-cadeau banner */
+.columns-streaming {
+  --streaming-box-bg: #fff;
+  --streaming-radius: 24px;
+  --streaming-text: #141312;
+
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* "Altijd inbegrepen" white box with checklist */
+.columns-streaming .columns-streaming-inbegrepen {
+  background-color: var(--streaming-box-bg);
+  border-radius: var(--streaming-radius);
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.columns-streaming .columns-streaming-inbegrepen h3 {
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 700;
+  margin: 0 0 16px;
+  color: var(--streaming-text);
+}
+
+.columns-streaming .columns-streaming-inbegrepen ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.columns-streaming .columns-streaming-inbegrepen li {
+  position: relative;
+  padding-left: 32px;
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--streaming-text);
+}
+
+.columns-streaming .columns-streaming-inbegrepen li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 700;
+}
+
+/* full-bleed streaming banner image */
+.columns-streaming .columns-streaming-banner {
+  border-radius: var(--streaming-radius);
+  overflow: hidden;
+  line-height: 0;
+}
+
+.columns-streaming .columns-streaming-banner picture,
+.columns-streaming .columns-streaming-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (width >= 900px) {
+  .columns-streaming .columns-streaming-inbegrepen ul {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}
