@@ -1,7 +1,14 @@
 /* hero-campaign: full-width banner image (headline baked into the artwork) */
-.hero-campaign-container .hero-campaign-wrapper {
+
+/* break the hero out of the section's max-width/padding so it spans full width */
+main > .section.hero-campaign-container {
+  margin: 0;
+}
+
+main > .section.hero-campaign-container > .hero-campaign-wrapper {
   max-width: unset;
   padding: 0;
+  margin: 0;
 }
 
 .hero-campaign {

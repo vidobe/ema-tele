@@ -221,6 +221,18 @@ export default async function decorate(block) {
           navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
         }
       });
+      // open the mega-menu on hover (desktop only)
+      navSection.addEventListener('mouseenter', () => {
+        if (isDesktop.matches && navSection.classList.contains('nav-drop')) {
+          toggleAllNavSections(navSections);
+          navSection.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // close any open mega-menu when the pointer leaves the nav row
+    navSections.addEventListener('mouseleave', () => {
+      if (isDesktop.matches) toggleAllNavSections(navSections);
     });
   }
 
