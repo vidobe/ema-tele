@@ -1,6 +1,6 @@
 /* hero-campaign: full-width banner image (headline baked into the artwork) */
 
-/* break the hero out of the section's max-width/padding so it spans full width */
+/* remove the section's top/bottom margin so the hero sits flush under the header */
 main > .section.hero-campaign-container {
   margin: 0;
 }
@@ -11,8 +11,13 @@ main > .section.hero-campaign-container > .hero-campaign-wrapper {
   margin: 0;
 }
 
+/* Full-bleed: break out of any parent max-width (e.g. the .section > div 1200px
+   cap) by spanning the full viewport width. Works regardless of ancestor width. */
 .hero-campaign {
   position: relative;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
   padding: 0;
   background-color: var(--hero-campaign-bg, #ffe615);
 }
