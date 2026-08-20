@@ -1,0 +1,9 @@
+{
+  "sites": {
+    "ema-tele": {
+      "previewOrg": "vidobe",
+      "previewSite": "ema-tele",
+      "contentHostUrl": "https://content.da.live/vidobe/ema-tele/"
+    }
+  }
+}
