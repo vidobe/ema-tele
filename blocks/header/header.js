@@ -156,7 +156,37 @@ export default async function decorate(block) {
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
     navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
-      if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
+      const submenu = navSection.querySelector(':scope > ul');
+      if (submenu) {
+        navSection.classList.add('nav-drop');
+        // Build a mega-menu. Column boundaries are marked by heading <li>s
+        // (a bare <strong> with no link); links following a heading belong to it.
+        const mega = document.createElement('div');
+        mega.className = 'nav-mega';
+        let column = null;
+        const startColumn = (headingEl) => {
+          column = document.createElement('div');
+          column.className = 'nav-mega-col';
+          if (headingEl) {
+            const h = document.createElement('p');
+            h.append(headingEl);
+            column.append(h);
+          }
+          column.append(document.createElement('ul'));
+          mega.append(column);
+        };
+        [...submenu.children].forEach((li) => {
+          const strong = li.querySelector(':scope > strong');
+          const hasLink = li.querySelector(':scope > a');
+          if (strong && !hasLink) {
+            startColumn(strong); // new column with this heading
+          } else {
+            if (!column) startColumn(null); // links before any heading → headingless column
+            column.querySelector('ul').append(li);
+          }
+        });
+        submenu.replaceWith(mega);
+      }
       navSection.addEventListener('click', () => {
         if (isDesktop.matches) {
           const expanded = navSection.getAttribute('aria-expanded') === 'true';

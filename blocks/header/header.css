@@ -49,6 +49,7 @@ header nav[aria-expanded='true'] {
 
   /* two tiers: full-width utility bar on top, main nav row below */
   header nav {
+    position: relative;
     display: grid;
     grid-template:
       'utility utility utility' auto
@@ -101,7 +102,9 @@ header nav[aria-expanded='true'] {
   }
 
   header nav .nav-utility a:any-link {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     padding: 6px 8px;
     color: rgb(20 19 18 / 64%);
     text-decoration: none;
@@ -110,6 +113,13 @@ header nav[aria-expanded='true'] {
 
   header nav .nav-utility a:hover {
     background-color: rgb(20 19 18 / 6%);
+  }
+
+  header nav .nav-utility .icon,
+  header nav .nav-utility .icon img,
+  header nav .nav-utility .icon svg {
+    width: 18px;
+    height: 18px;
   }
 
   header nav .nav-utility p {
@@ -335,7 +345,7 @@ header nav .nav-sections ul > li > ul > li {
     transform: rotate(315deg);
   }
 
-  header nav .nav-sections ul {
+  header nav .nav-sections .default-content-wrapper > ul {
     display: flex;
     gap: 24px;
     margin: 0;
@@ -343,39 +353,61 @@ header nav .nav-sections ul > li > ul > li {
 
   header nav .nav-sections .default-content-wrapper > ul > li {
     flex: 0 1 auto;
-    position: relative;
+    position: static;
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li > ul {
+  /* full-width mega-menu panel, hidden until its item is expanded */
+  header nav .nav-sections .nav-mega {
     display: none;
-    position: relative;
-  }
-
-  header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded='true'] > ul {
-    display: block;
     position: absolute;
-    left: -24px;
-    width: 200px;
-    top: 150%;
-    padding: 16px;
+    left: 0;
+    right: 0;
+    top: 100%;
+    gap: 48px;
+    padding: 40px max((100% - 1200px) / 2, 32px);
     background-color: var(--light-color);
-    white-space: initial;
+    box-shadow: 0 8px 16px rgb(0 0 0 / 8%);
+    z-index: 3;
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
-    content: '';
-    position: absolute;
-    top: -8px;
-    left: 16px;
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-bottom: 8px solid var(--light-color);
+  header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded='true'] .nav-mega {
+    display: flex;
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
-    padding: 8px 0;
+  /* each column in the mega-menu */
+  header nav .nav-sections .nav-mega .nav-mega-col {
+    flex: 0 1 auto;
+    min-width: 200px;
+  }
+
+  header nav .nav-sections .nav-mega p {
+    margin: 0 0 16px;
+    color: rgb(20 19 18 / 64%);
+    font-size: 16px;
+  }
+
+  header nav .nav-sections .nav-mega p strong {
+    font-weight: 700;
+  }
+
+  header nav .nav-sections .nav-mega ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  header nav .nav-sections .nav-mega a {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--text-color);
+    text-decoration: none;
+  }
+
+  header nav .nav-sections .nav-mega a:hover {
+    text-decoration: underline;
   }
 }
 
