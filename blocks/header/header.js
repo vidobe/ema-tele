@@ -124,14 +124,30 @@ export default async function decorate(block) {
   nav.id = 'nav';
   while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
 
-  const classes = ['brand', 'sections', 'tools'];
+  const classes = ['utility', 'brand', 'sections', 'tools'];
   classes.forEach((c, i) => {
     const section = nav.children[i];
     if (section) section.classList.add(`nav-${c}`);
   });
 
+  // utility bar (top tier): enable click dropdowns on its list items (Alle websites, NL)
+  const navUtility = nav.querySelector('.nav-utility');
+  if (navUtility) {
+    navUtility.querySelectorAll(':scope ul > li').forEach((utilItem) => {
+      if (utilItem.querySelector('ul')) {
+        utilItem.classList.add('nav-drop');
+        utilItem.setAttribute('aria-expanded', 'false');
+        utilItem.addEventListener('click', () => {
+          const expanded = utilItem.getAttribute('aria-expanded') === 'true';
+          navUtility.querySelectorAll('li[aria-expanded="true"]').forEach((el) => el.setAttribute('aria-expanded', 'false'));
+          utilItem.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+        });
+      }
+    });
+  }
+
   const navBrand = nav.querySelector('.nav-brand');
-  const brandLink = navBrand.querySelector('.button');
+  const brandLink = navBrand && navBrand.querySelector('.button');
   if (brandLink) {
     brandLink.className = '';
     brandLink.closest('.button-container').className = '';
