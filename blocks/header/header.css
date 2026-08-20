@@ -45,8 +45,8 @@ header nav[aria-expanded='true'] {
   header nav {
     display: grid;
     grid-template:
-      'utility utility' auto
-      'brand sections' var(--nav-height) / auto 1fr;
+      'utility utility utility' auto
+      'brand sections tools' var(--nav-height) / auto 1fr auto;
     align-items: center;
     gap: 0 32px;
     max-width: 1264px;
@@ -57,6 +57,9 @@ header nav[aria-expanded='true'] {
   header nav[aria-expanded='true'] {
     min-height: 0;
     overflow: visible;
+    grid-template:
+      'utility utility utility' auto
+      'brand sections tools' var(--nav-height) / auto 1fr auto;
   }
 
   /* utility bar — base element rules first (lowest specificity) */
@@ -65,7 +68,7 @@ header nav[aria-expanded='true'] {
     display: flex;
     visibility: visible;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     padding: 6px 0;
     border-bottom: 1px solid rgb(20 19 18 / 8%);
     font-size: 14px;
@@ -101,36 +104,6 @@ header nav[aria-expanded='true'] {
     padding: 6px 8px;
     color: rgb(20 19 18 / 64%);
     cursor: pointer;
-  }
-
-  /* search pill: full width of the right group so it sits below the NL row */
-  header nav .nav-utility .nav-search {
-    flex-basis: 100%;
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 6px;
-  }
-
-  header nav .nav-utility .nav-search a {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 16px;
-    border-radius: 12px;
-    background-color: rgb(20 19 18 / 8%);
-    color: #999391;
-    text-decoration: none;
-    font-size: 16px;
-  }
-
-  header nav .nav-utility .nav-search a:hover {
-    background-color: rgb(20 19 18 / 14%);
-  }
-
-  header nav .nav-utility .nav-search .icon-search,
-  header nav .nav-utility .nav-search .icon-search svg {
-    width: 18px;
-    height: 18px;
   }
 
   /* utility dropdown */
@@ -174,13 +147,6 @@ header nav[aria-expanded='true'] {
 
   header nav .nav-utility .nav-drop[aria-expanded='true'] > ul {
     display: flex;
-  }
-
-  /* right group (account + language) wraps so the search pill drops
-     to a second line under the language selector */
-  header nav .nav-utility .default-content-wrapper > ul:last-child {
-    flex-wrap: wrap;
-    justify-content: flex-end;
   }
 }
 
@@ -403,4 +369,34 @@ header nav .nav-sections ul > li > ul > li {
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
+}
+
+/* search pill (Telenet "Zoek") — sits on the main row, far right */
+header nav .nav-tools .default-content-wrapper ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header nav .nav-tools a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  border-radius: 24px;
+  background-color: rgb(20 19 18 / 8%);
+  color: #999391;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+header nav .nav-tools a:hover {
+  background-color: rgb(20 19 18 / 14%);
+}
+
+header nav .nav-tools .icon-search,
+header nav .nav-tools .icon-search img,
+header nav .nav-tools .icon-search svg {
+  width: 18px;
+  height: 18px;
 }
