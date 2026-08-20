@@ -118,6 +118,18 @@ export default async function decorate(block) {
   const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
   const fragment = await loadFragment(navPath);
 
+  // The fragment decoration strips bare-<strong> list items used as mega-menu
+  // column headings. Fetch the raw nav HTML too so we can rebuild those columns.
+  let rawNav = null;
+  try {
+    const resp = await fetch(`${navPath}.plain.html`);
+    if (resp.ok) {
+      const rawDoc = document.createElement('div');
+      rawDoc.innerHTML = await resp.text();
+      rawNav = rawDoc;
+    }
+  } catch { /* fall back to decorated fragment only */ }
+
   // decorate nav DOM
   block.textContent = '';
   const nav = document.createElement('nav');
@@ -155,34 +167,49 @@ export default async function decorate(block) {
 
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
-    navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
+    // Raw (undecorated) main-nav list items, still holding the <strong> column headings.
+    const rawItems = rawNav
+      ? [...rawNav.children][2]?.querySelectorAll(':scope > ul > li') || []
+      : [];
+
+    [...navSections.querySelectorAll(':scope .default-content-wrapper > ul > li')].forEach((navSection, idx) => {
       const submenu = navSection.querySelector(':scope > ul');
       if (submenu) {
         navSection.classList.add('nav-drop');
         // Build a mega-menu. Column boundaries are marked by heading <li>s
-        // (a bare <strong> with no link); links following a heading belong to it.
+        // (a bare <strong> with no link) in the RAW nav; links following a
+        // heading belong to it. The decorated fragment loses those headings.
+        const rawSubmenu = rawItems[idx] ? rawItems[idx].querySelector(':scope > ul') : null;
+        const source = rawSubmenu || submenu;
         const mega = document.createElement('div');
         mega.className = 'nav-mega';
         let column = null;
-        const startColumn = (headingEl) => {
+        const startColumn = (headingText) => {
           column = document.createElement('div');
           column.className = 'nav-mega-col';
-          if (headingEl) {
+          if (headingText) {
             const h = document.createElement('p');
-            h.append(headingEl);
+            const strong = document.createElement('strong');
+            strong.textContent = headingText;
+            h.append(strong);
             column.append(h);
           }
           column.append(document.createElement('ul'));
           mega.append(column);
         };
-        [...submenu.children].forEach((li) => {
+        [...source.children].forEach((li) => {
           const strong = li.querySelector(':scope > strong');
-          const hasLink = li.querySelector(':scope > a');
-          if (strong && !hasLink) {
-            startColumn(strong); // new column with this heading
-          } else {
-            if (!column) startColumn(null); // links before any heading → headingless column
-            column.querySelector('ul').append(li);
+          const link = li.querySelector(':scope > a');
+          if (strong && !link) {
+            startColumn(strong.textContent); // new column with this heading
+          } else if (link) {
+            if (!column) startColumn(null); // links before any heading
+            const item = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = link.getAttribute('href');
+            a.textContent = link.textContent;
+            item.append(a);
+            column.querySelector('ul').append(item);
           }
         });
         submenu.replaceWith(mega);
