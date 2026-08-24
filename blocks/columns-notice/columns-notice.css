@@ -10,8 +10,8 @@
   display: block;
 }
 
-/* the info box (first row) */
-.columns-notice > div:first-child {
+/* the info box (the content div, not the extracted filter row) */
+.columns-notice > div:not(.nav-filter-row) {
   background-color: var(--notice-bg);
   border: 1px solid var(--notice-border);
   border-radius: var(--notice-radius);
@@ -19,29 +19,29 @@
   position: relative;
 }
 
-.columns-notice > div:first-child p {
+.columns-notice > div:not(.nav-filter-row) p {
   margin: 0 0 4px;
   font-size: 18px;
   line-height: 28px;
   color: var(--notice-text);
 }
 
-.columns-notice > div:first-child p:first-child {
+.columns-notice > div:not(.nav-filter-row) p:first-child {
   font-weight: 700;
   margin-bottom: 12px;
 }
 
-.columns-notice > div:first-child strong {
+.columns-notice > div:not(.nav-filter-row) strong {
   font-weight: 700;
 }
 
-/* "Spring naar" filter row, moved below the notice box by the block JS */
+/* "Spring naar" filter row, moved above the notice box by the block JS */
 .columns-notice .nav-filter-row {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 24px;
+  margin-bottom: 24px;
   font-size: 18px;
   color: var(--notice-text);
 }

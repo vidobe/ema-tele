@@ -23,8 +23,9 @@
 .cards-pricing > ul > li {
   position: relative;
   background-color: var(--pricing-card-bg);
+  border: 1px solid rgb(20 19 18 / 10%);
   border-radius: var(--pricing-radius);
-  box-shadow: 0 4px 8px 0 rgb(20 19 18 / 4%);
+  box-shadow: 0 8px 24px 0 rgb(20 19 18 / 10%);
   padding: 24px;
   box-sizing: border-box;
 }
