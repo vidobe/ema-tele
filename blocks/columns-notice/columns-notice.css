@@ -1,9 +1,10 @@
 /* columns-notice: light-blue student discount info banner + jump links */
 .columns-notice {
-  --notice-bg: rgb(225 235 255 / 64%);
-  --notice-border: #aadcff;
-  --notice-radius: 12px;
+  --notice-bg: #eef4ff;
+  --notice-border: #d6e4ff;
+  --notice-radius: 16px;
   --notice-text: #141312;
+  --notice-icon-offset: 40px;
 }
 
 .columns-notice > div {
@@ -15,24 +16,73 @@
   background-color: var(--notice-bg);
   border: 1px solid var(--notice-border);
   border-radius: var(--notice-radius);
-  padding: 24px 64px 24px 24px;
+  padding: 24px 56px;
   position: relative;
 }
 
-.columns-notice > div:not(.nav-filter-row) p {
+/* heading row: info icon + bold title */
+.columns-notice .notice-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 12px;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 700;
+  color: var(--notice-text);
+}
+
+.columns-notice .notice-heading .icon-info {
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+}
+
+.columns-notice .notice-heading .icon-info img,
+.columns-notice .notice-heading .icon-info svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* body text indented to align under the heading text (past the icon) */
+.columns-notice .notice-body {
+  padding-left: var(--notice-icon-offset);
+}
+
+.columns-notice .notice-body p {
   margin: 0 0 4px;
   font-size: 18px;
   line-height: 28px;
   color: var(--notice-text);
 }
 
-.columns-notice > div:not(.nav-filter-row) p:first-child {
-  font-weight: 700;
-  margin-bottom: 12px;
+.columns-notice .notice-body p:first-child {
+  margin-bottom: 8px;
 }
 
 .columns-notice > div:not(.nav-filter-row) strong {
   font-weight: 700;
+}
+
+/* close button, top-right */
+.columns-notice .notice-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--notice-text);
+  cursor: pointer;
+}
+
+.columns-notice .notice-close .icon-close,
+.columns-notice .notice-close .icon-close img,
+.columns-notice .notice-close .icon-close svg {
+  width: 20px;
+  height: 20px;
 }
 
 /* "Spring naar" filter row, moved above the notice box by the block JS */
