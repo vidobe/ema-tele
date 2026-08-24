@@ -34,3 +34,28 @@
 .columns-notice > div:first-child strong {
   font-weight: 700;
 }
+
+/* "Spring naar" filter row, moved below the notice box by the block JS */
+.columns-notice .nav-filter-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+  font-size: 18px;
+  color: var(--notice-text);
+}
+
+.columns-notice .nav-filter-row a {
+  display: inline-block;
+  padding: 10px 24px;
+  border: 1px solid var(--notice-border);
+  border-radius: 24px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--notice-text);
+}
+
+.columns-notice .nav-filter-row a:hover {
+  background-color: var(--notice-bg);
+}
