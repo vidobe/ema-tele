@@ -1,0 +1,16 @@
+{
+  "pageName": "indextest",
+  "fileKey": "IJ4hMnSE2g4ORFVNy7loI8",
+  "pageNodeId": "1:2",
+  "designName": "Telenet Home page",
+  "frameWidth": 1920,
+  "sections": [
+    { "order": 1, "nodeId": "1:4", "name": "Hero - Gigasnel internet + streamingcadeau", "block": "hero-campaign", "y": 112, "height": 389 },
+    { "order": 2, "nodeId": "1:86", "name": "Maak je Telenet op jouw maat (3 cards + klant bar)", "block": "cards-maat", "newBlock": true, "y": 501, "height": 800 },
+    { "order": 3, "nodeId": "1:241", "name": "Maak je Telenet nu helemaal op jouw maat (image + 3 features)", "block": "columns-features", "y": 2075, "height": 772 },
+    { "order": 4, "nodeId": "1:400", "name": "Promo's die je niet wil missen (heading)", "block": "default", "y": 2951, "height": 112 },
+    { "order": 5, "nodeId": "1:324", "name": "Promo cards (3) + 2 klant tiles", "block": "cards-promo", "y": 3111, "height": 775 },
+    { "order": 6, "nodeId": "1:421", "name": "Zomersolden toestellen (heading + product cards)", "block": "cards", "y": 3918, "height": 196 }
+  ],
+  "notes": "Header 1:592 + Footer 1:451 reuse existing nav/footer. Reusing hero-campaign, columns-features, cards-promo where they match. New block: cards-maat (3-card chooser)."
+}

@@ -1,0 +1,154 @@
+/* cards-maat: "Maak je Telenet op jouw maat" — 3 chooser cards + klant bar */
+.cards-maat {
+  --maat-radius: 24px;
+  --maat-text: #141312;
+  --maat-highlight-bg: #ffc421;
+  --maat-shadow: 0 4px 8px 0 rgb(20 19 18 / 4%);
+}
+
+.cards-maat > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.cards-maat > ul > li {
+  background-color: #fff;
+  border-radius: var(--maat-radius);
+  box-shadow: var(--maat-shadow);
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.cards-maat > ul > li.cards-maat-highlight {
+  background-color: var(--maat-highlight-bg);
+}
+
+.cards-maat h3 {
+  font-size: 32px;
+  line-height: 32px;
+  font-weight: 700;
+  margin: 0 0 16px;
+  color: var(--maat-text);
+}
+
+.cards-maat .cards-maat-highlight h3 {
+  font-size: 40px;
+  line-height: 40px;
+}
+
+.cards-maat p {
+  font-size: 18px;
+  line-height: 28px;
+  margin: 0 0 16px;
+  color: var(--maat-text);
+}
+
+/* list card */
+.cards-maat-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cards-maat-list ul li {
+  position: relative;
+  padding-left: 28px;
+  font-size: 16px;
+}
+
+.cards-maat-list ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  background-color: var(--maat-highlight-bg);
+  border-radius: 4px;
+}
+
+/* image card */
+.cards-maat-image picture,
+.cards-maat-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+/* CTAs */
+.cards-maat a {
+  margin-top: auto;
+  align-self: flex-start;
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+  font-size: 20px;
+  text-decoration: none;
+  border-radius: 12px;
+  padding: 10px 24px;
+}
+
+.cards-maat-highlight a {
+  background-color: #000;
+  color: #fff;
+}
+
+.cards-maat-image a {
+  border: 1px solid #000;
+  color: var(--maat-text);
+}
+
+/* Ben je al klant? bar */
+.cards-maat-klant {
+  margin-top: 24px;
+  background-color: #fff;
+  border-radius: var(--maat-radius);
+  box-shadow: var(--maat-shadow);
+  padding: 24px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cards-maat .cards-maat-klant h3 {
+  font-size: 32px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.cards-maat-klant a {
+  align-self: flex-start;
+  border: 1px solid #000;
+  border-radius: 12px;
+  padding: 10px 24px;
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--maat-text);
+}
+
+@media (width >= 900px) {
+  .cards-maat > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cards-maat-klant {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .cards-maat-klant a {
+    margin-left: auto;
+  }
+}

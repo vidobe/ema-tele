@@ -1,0 +1,32 @@
+{
+  "nodeId": "1:86",
+  "block": "cards-maat",
+  "heading": "Maak je Telenet op jouw maat",
+  "cards": [
+    {
+      "type": "list", "heading": "Wat zoek je?",
+      "links": ["Combo's", "Internet", "Mobiel", "TV", "Streaming", "Toestellen", "Voor zelfstandigen"]
+    },
+    {
+      "type": "highlight", "bg": "#ffc421",
+      "heading": "Stel je combo helemaal zelf samen",
+      "body": "Van internetsnelheid tot aantal simkaarten, streamingdiensten, met of zonder tv? Jij kiest helemaal zelf wat je nodig hebt.",
+      "cta": "Start met samenstellen", "ctaStyle": "primary-dark"
+    },
+    {
+      "type": "image", "image": "maat-slimme-combos.png",
+      "heading": "Slimme combo's om je op weg te helpen",
+      "body": "Single, student of familie? Er is een Telenet voor iedereen! Pas elke combo aan tot die volledig bij jou past.",
+      "cta": "Bekijk alle slimme combo's", "ctaStyle": "outline"
+    }
+  ],
+  "klantBar": {
+    "heading": "Ben je al klant?",
+    "body": "Check, beheer en pas je Telenet makkelijk aan in MyTelenet.",
+    "cta": "Naar MyTelenet"
+  },
+  "assets": [
+    { "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/1b529958-404c-4973-9cfb-0376a6aa46af", "filename": "maat-slimme-combos.png", "usage": "content-image" }
+  ],
+  "tokens": { "card-bg": "#fff", "highlight-bg": "#ffc421", "radius": "24px", "heading": "56px" }
+}

@@ -1,0 +1,15 @@
+{
+  "nodeId": "1:241",
+  "block": "cards-promo",
+  "heading": "Promo's die je niet wil missen",
+  "cards": [
+    { "badge": "Eerste smartphone", "heading": "Gsm-abonnement op kindermaat", "body": "Slimme blokkeringen zorgen voor veiliger smartphonegebruik. Nu met 1 jaar ChatLicense cadeau (t.w.v. € 59,99).", "cta": "Lees meer over Mobile Junior", "bg": "promo-kindermaat.png", "dark": false },
+    { "badge": "Promo", "heading": "Streamingcadeau bij je nieuwe internet", "body": "Bestel internet en krijg 6 maanden korting op een streamingdienst.", "cta": "Ontdek de promo", "bg": null, "dark": true },
+    { "badge": "Speciaal voor Telenet-klanten", "heading": "Plooi jij als eerste?", "body": "Pre-order jouw Samsung Galaxy Z Flip8, Fold8 of Fold8 Ultra en pak tot wel € 600 korting.", "cta": "Pre-order nu", "bg": "promo-samsung.png", "dark": false }
+  ],
+  "footerCta": "Bekijk alle promoties",
+  "assets": [
+    { "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/3ee92f9a-ab53-4426-80fb-903523e22fc1", "filename": "promo-kindermaat.png", "usage": "background-image" },
+    { "url": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/bc637e43-8ef2-4f86-b206-6dff2c387a29", "filename": "promo-samsung.png", "usage": "background-image" }
+  ]
+}
